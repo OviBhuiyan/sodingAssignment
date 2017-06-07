@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SODING_INDIVIDUAL_ASSIGNMENT.ViewModel.TaskVM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 align="center">Task List</h2>
+<hr />
+
+@if (TempData["message"] != null)
+{
+    <div id="viewbagmessage" style="display:none;" class="alert alert-success">
+
+        <strong>@TempData["message"]</strong>
+
+
+    </div>
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create", "Task", new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <thead class="thead-default">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskName)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaskName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" }) |
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script>$('#viewbagmessage').show(200).delay(2500).hide(200);</script>
