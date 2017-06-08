@@ -17,7 +17,7 @@ Run this project into debug mode.
 ### Coding style tests
 
 ```
-Separate business logic class. Call the business logic layer from web pages.
+Separate business logic class. Call the business logic layer from controller.
 
 ```
 
