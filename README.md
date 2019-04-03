@@ -35,4 +35,4 @@ Separate business logic class. Call the business logic layer from controller.
 
 ## Authors
 
-* **Md. Tanbir Hossain**
+* **Mohammed Tanbir Hossain**
